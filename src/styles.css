@@ -1,0 +1,45 @@
+.text{
+    color: red;
+}
+
+* {
+    --document-background-color: #B1AFFF;
+    --base-background-color: #FFE9D0;
+    --button-color: pink;
+    --content-background-color: #FFFED3;
+    --border-color: black;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    background-color: var(--document-background-color);
+}
+
+/* section to organize main sections of page */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* style forecast */
+.forecast.box.container{
+    display:flex;
+    justify-content: space-between;
+    border: 2px var(--border-color);
+
+    .forecast.box{
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+    }
+}
