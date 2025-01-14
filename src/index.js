@@ -1,5 +1,6 @@
 // initializes page
 // processes event listeners from render.js and calls api.js functions
+
 import { apiManager } from "./api.js"
 import { renderManager } from "./render.js"
 
