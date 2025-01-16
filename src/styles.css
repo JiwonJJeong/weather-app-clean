@@ -1,6 +1,3 @@
-.text{
-    color: red;
-}
 
 * {
     --document-background-color: #B1AFFF;
@@ -34,9 +31,13 @@ body {
 /* style current weather area */
 .today.weather.container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: min-content 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     justify-items: center;
+    background-color: var(--base-background-color);
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
 
     .condition{
         grid-area: 1 / 1 / 3 / 2;
@@ -54,11 +55,12 @@ body {
 
     .time{
         grid-area: 2 / 2 / 3 / 3;
+        align-self: center;
     }
 
     .precip {
-        grid-area: 1 / 3 / 2 / 4;
-        align-self: end;
+        grid-area: 1 / 3 / 3 / 4;
+        align-self:center;
     }
 }
 

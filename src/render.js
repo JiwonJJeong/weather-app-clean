@@ -193,8 +193,8 @@ const renderManager = (function () {
     editClassChild(conditionTempTimePrecipContainers[1], "temp", `${tempObject.temp}${DEGREE_F_SYMBOL}`);
     editClassChild(conditionTempTimePrecipContainers[1], "tempmax", `Max: ${tempObject.tempmax}${DEGREE_F_SYMBOL}`);
     editClassChild(conditionTempTimePrecipContainers[1], "tempmin", `Min: ${tempObject.tempmin}${DEGREE_F_SYMBOL}`);
-    editClassChild(conditionTempTimePrecipContainers[2], "text", dateObject.dayAndDate);
-    editClassChild(conditionTempTimePrecipContainers[2], "text", calculateLocalTime(tzoffset));
+    editClassChild(conditionTempTimePrecipContainers[2], "day", dateObject.dayAndDate);
+    editClassChild(conditionTempTimePrecipContainers[2], "time", calculateLocalTime(tzoffset));
     editClassChild(conditionTempTimePrecipContainers[3], "precip", `Precipitation: ${precipObject.precipprob}%`);
   }
 
