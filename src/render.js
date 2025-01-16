@@ -111,9 +111,9 @@ const renderManager = (function () {
     todayWeatherConditionContainer.append(conditionIcon, conditionText);
     const todayWeatherTempContainer = createElement("div", "temp container");
     const tempText = createElement("p","temp text");
-    const tempminText = createElement("p","tempmin text");
     const tempmaxText = createElement("p","tempmax text");
-    todayWeatherTempContainer.append(tempText, tempminText, tempmaxText);
+    const tempminText = createElement("p","tempmin text");
+    todayWeatherTempContainer.append(tempText, tempmaxText, tempminText);
     const todayWeatherTimeContainer = createElement("div", "time container");
     const dayText = createElement("p", "day text");
     const timeText = createElement("p","time text");
@@ -182,17 +182,20 @@ const renderManager = (function () {
     locationTitle.textContent = resolvedAddress;
   }
 
+  const DEGREE_F_SYMBOL = "°F";
+  const DEGREE_C_SYMBOL = "°C";
+  const DEGREE_SYMBOL = "°";
   const editTodayWeather = function(tzoffset, dateObject, tempObject, precipObject){
     const conditionTempTimePrecipContainers = todayWeatherContainer.children;
     editClassChildImage(conditionTempTimePrecipContainers[0], "icon", precipObject.conditions);
     editClassChild(conditionTempTimePrecipContainers[0], "text", precipObject.conditions);
     // goes through each key, value pair in tempObject and updates text on nodes
-    for (const [key, value] of Object.entries(tempObject)){
-      editClassChild(conditionTempTimePrecipContainers[1], key, value);
-    }
+    editClassChild(conditionTempTimePrecipContainers[1], "temp", `${tempObject.temp}${DEGREE_F_SYMBOL}`);
+    editClassChild(conditionTempTimePrecipContainers[1], "tempmax", `Max: ${tempObject.tempmax}${DEGREE_F_SYMBOL}`);
+    editClassChild(conditionTempTimePrecipContainers[1], "tempmin", `Min: ${tempObject.tempmin}${DEGREE_F_SYMBOL}`);
     editClassChild(conditionTempTimePrecipContainers[2], "text", dateObject.dayAndDate);
     editClassChild(conditionTempTimePrecipContainers[2], "text", calculateLocalTime(tzoffset));
-    editClassChild(conditionTempTimePrecipContainers[3], "precip", precipObject.precipprob);
+    editClassChild(conditionTempTimePrecipContainers[3], "precip", `Precipitation: ${precipObject.precipprob}%`);
   }
 
   // manually calculate the local time at the location using UTC time +/- tzoffset
@@ -227,7 +230,7 @@ const renderManager = (function () {
     }
     // repeated for other objects, because nested loops confusing
     for (const [key, value] of Object.entries(tempObject)){
-      editClassChild(timeTempConditionsContainers[1], key, value);
+      editClassChild(timeTempConditionsContainers[1], key, `${value}${DEGREE_SYMBOL}`);
     }
     for (const [key, value] of Object.entries(precipObject)){
       if (key == "precipprob"){
