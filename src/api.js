@@ -34,6 +34,8 @@ const apiManager = (function(){
         }
         catch(error){
             console.error('Fetch error: ' + error);
+            alert("There was an input error.");
+            return error;
         }
     }
 

@@ -14,12 +14,16 @@ const pageManager = function(){
     const init = async function(){
         renderManager.init();
         const weatherInfo = await apiManager.getWeather(defaultLocation);
-        renderManager.editWeather(weatherInfo);
+        if (weatherInfo instanceof Error != true){
+            renderManager.editWeather(weatherInfo);
+        }
     }
 
     const newForecast = async function(inputLocation){
         const weatherInfo = await apiManager.getWeather(inputLocation);
-        renderManager.editWeather(weatherInfo);
+        if (weatherInfo instanceof Error != true){
+            renderManager.editWeather(weatherInfo);
+        }
     }
 
     return {init, newForecast};
