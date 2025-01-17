@@ -22,3 +22,4 @@ Attribution
 <a href="https://www.flaticon.com/free-icons/overcast" title="overcast icons">Overcast icons created by Edi Prast - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/rain" title="rain icons">Rain icons created by bqlqn - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/snow" title="snow icons">Snow icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/search" title="search icons">Search icons created by Chanut - Flaticon</a>

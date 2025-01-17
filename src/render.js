@@ -12,6 +12,7 @@ import CloudIcon from "./images/partly-cloudy.png";
 import OvercastIcon from "./images/clouds.png";
 import SunIcon from "./images/sun.png";
 import RainIcon from "./images/rainy.png";
+import SearchIcon from "./images/magnifying-glass.png";
 
 console.log("*MODULE CHECK* from render.js");
 
@@ -68,14 +69,14 @@ const renderManager = (function () {
   }
   
   const renderSearchButton = function(){
-    const submitButton = createElement("button","location submit");
+    const submitButton = createImage(SearchIcon,"location submit", "submit button");
     return submitButton;
   }
 
   // bind event listener to the search button
   const bindLocationInput = function(){
     const locationForm = document.querySelector("form.input");
-    const submitButton = locationForm.querySelector("button.submit");
+    const submitButton = locationForm.querySelector("img.submit");
     const locationInput = locationForm.querySelector("input.location");
     submitButton.addEventListener("click", (e) => {
       e.preventDefault();
