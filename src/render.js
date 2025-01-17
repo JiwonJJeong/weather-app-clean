@@ -19,7 +19,6 @@ console.log("*MODULE CHECK* from render.js");
 const renderManager = (function () {
   const init = function () {
     document.body.appendChild(renderLocationInput());
-    //renderHeader();
     document.body.appendChild(renderContentContainers()); // render the boxes to put forecast info
     bindLocationInput();
   };
@@ -183,7 +182,6 @@ const renderManager = (function () {
   }
 
   const DEGREE_F_SYMBOL = "°F";
-  const DEGREE_C_SYMBOL = "°C";
   const DEGREE_SYMBOL = "°";
   const editTodayWeather = function(tzoffset, dateObject, tempObject, precipObject){
     const conditionTempTimePrecipContainers = todayWeatherContainer.children;

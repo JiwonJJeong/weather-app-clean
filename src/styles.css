@@ -2,10 +2,13 @@
 * {
     --document-background-color: #B1AFFF;
     --base-background-color: #FFE9D0;
-    --button-color: pink;
+    --alt-font-color: pink;
     --content-background-color: #FFFED3;
+    --base-background-edge-color: blue;
     --border-color: black;
     box-sizing: border-box;
+    --font-size-large: 25px;
+    --font-size-larger: 40px;
 }
 
 h1,
@@ -25,7 +28,21 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
     align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.content.container{
+    background-color: var(--base-background-color);
+    padding: 20px;
+    padding-bottom: 0px;
+    display:flex;
+    flex-direction:column;
+    gap: 10px  20px;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 100px 30px var(--base-background-edge-color)
 }
 
 /* style form area */
@@ -53,17 +70,15 @@ body {
 /* style current weather area */
 .today.weather.container{
     display: grid;
-    grid-template-columns: min-content 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: min-content 1fr max-content;
+    grid-template-rows: min-content 1fr;
+    margin-right: 15%;
     justify-items: center;
-    background-color: var(--base-background-color);
-    border-radius: 5px;
     text-align: center;
-    padding: 20px;
+    align-items: center;
 
     .condition{
-        grid-area: 1 / 1 / 3 / 2;
-        align-self: center;
+        grid-area: 2 / 1 / 3 / 2; /* rowS/colS/rowE/colE */
 
         img{
             width: 80px !important;
@@ -72,17 +87,30 @@ body {
     }
 
     .temp{
-        grid-area: 1 / 2 / 2 / 3;
+        grid-area: 2 / 2 / 3 / 3;
+        display: grid;
+        grid-template-rows:min-content min-content;
+        grid-template-columns: min-content max-content;
+        column-gap: 10px;
+        align-items: center;
+        
+        p.temp.text{
+            font-size: var(--font-size-larger);
+            grid-area: 1 / 1 / 3 / 2;
+        }
     }
 
     .time{
-        grid-area: 2 / 2 / 3 / 3;
-        align-self: center;
+        grid-area: 1 / 1 / 2 / 3;
+        justify-self: start;
+        display: flex;
+        flex-direction: row;
+        font-size: var(--font-size-large);
+        gap: 30px;
     }
 
     .precip {
-        grid-area: 1 / 3 / 3 / 4;
-        align-self:center;
+        grid-area: 2 / 3 / 3 / 4;
     }
 }
 
@@ -91,7 +119,7 @@ body {
     display:flex;
     justify-content: space-between;
     border: 2px var(--border-color);
-    gap: 2px;
+    gap: 4px;
     text-align: center;
 
     .forecast.box{
@@ -101,7 +129,6 @@ body {
         align-items: center;
         background-color: var(--content-background-color);
         padding: 2px;
-        border-radius: 3px;
 
         p.dayAndDate{
             font-size: 20px;
@@ -109,7 +136,7 @@ body {
         }
 
         p.temp{
-            font-size: 25px;
+            font-size: var(--font-size-large);
         }
     }
 }
