@@ -155,9 +155,8 @@ const renderManager = (function () {
     timeContainer.append(dayAndDateText);
     const tempContainer = createElement("div", "temp container");
     const tempText = createElement("p","temp text");
-    const tempminText = createElement("p","tempmin text");
-    const tempmaxText = createElement("p","tempmax text");
-    tempContainer.append(tempText, tempminText, tempmaxText);
+    const tempminmaxText = createElement("p","tempminmax text");
+    tempContainer.append(tempText, tempminmaxText);
     const conditionsContainer = createElement("div", "conditions container");
     const conditionsImage = createImage("","conditions image"); // must convert conditions text to an image src in editing later
     const precipprobText = createElement("p", "precipprob text");
@@ -229,13 +228,12 @@ const renderManager = (function () {
     for (const [key, value] of Object.entries(dateObject)){
       editClassChild(timeTempConditionsContainers[0], key, value);
     }
+    editClassChild(timeTempConditionsContainers[1], "temp", `${tempObject.temp}${DEGREE_SYMBOL}`);
+    editClassChild(timeTempConditionsContainers[1], "tempminmax", `${tempObject.tempmin}${DEGREE_SYMBOL}-${tempObject.tempmax}${DEGREE_SYMBOL}`);
     // repeated for other objects, because nested loops confusing
-    for (const [key, value] of Object.entries(tempObject)){
-      editClassChild(timeTempConditionsContainers[1], key, `${value}${DEGREE_SYMBOL}`);
-    }
     for (const [key, value] of Object.entries(precipObject)){
       if (key == "precipprob"){
-        editClassChild(timeTempConditionsContainers[2], key, value);
+        editClassChild(timeTempConditionsContainers[2], key, `${value}%`);
       } else if (key == "conditions"){
         editClassChildImage(timeTempConditionsContainers[2], key, value)
       }

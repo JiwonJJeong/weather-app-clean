@@ -91,10 +91,25 @@ body {
     display:flex;
     justify-content: space-between;
     border: 2px var(--border-color);
+    gap: 2px;
+    text-align: center;
 
     .forecast.box{
         display: flex;
         flex-direction:column;
         justify-content: center;
+        align-items: center;
+        background-color: var(--content-background-color);
+        padding: 2px;
+        border-radius: 3px;
+
+        p.dayAndDate{
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        p.temp{
+            font-size: 25px;
+        }
     }
 }
