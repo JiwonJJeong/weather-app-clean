@@ -201,7 +201,7 @@ const renderManager = (function () {
   const calculateLocalTime = function(tzoffset){
     const currentDate = new Date();
     // returns local hour from 0-23
-    const localHourUnformatted = (currentDate.getUTCHours()+tzoffset)%24;
+    const localHourUnformatted = (currentDate.getUTCHours()+tzoffset+24)%24;
     let AMPMString;
     if (Math.trunc(localHourUnformatted/12) == 0){
       AMPMString = "AM";
