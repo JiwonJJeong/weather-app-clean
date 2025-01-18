@@ -1,11 +1,9 @@
 
 * {
-    --document-background-color: #B1AFFF;
-    --base-background-color: #FFE9D0;
-    --alt-font-color: pink;
-    --content-background-color: #FFFED3;
-    --base-background-edge-color: blue;
-    --border-color: black;
+    --document-background-color: #f1c8e9;
+    --base-background-color: #D3F6DB;
+    --content-background-color: #fffff2;
+    --base-background-edge-color: #3790a7;
     box-sizing: border-box;
     --font-size-large: 25px;
     --font-size-larger: 40px;
