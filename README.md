@@ -1,7 +1,13 @@
 # weather-app
-The Odin Project project to make a weather forecast site
+The Odin Project project to make a weather forecast site. Fetch and display forecast from visual crossing weather API.
 
-Important Lessons
+## Skills Used
+- Manage versions with git and GitHub.
+- Fetch and process object data from weather API with async JS.
+- Use mix of Flexbox, Grid, and DOM manipulation to render page.
+- Organize assets and code with ESM and webpack.
+
+### Important Lessons
 
 - Any function that calls an async function needs to also be async if it needs to wait for the promise to resolve
 - Embedded strings with `${variable}` is useful in minimizing code
@@ -15,7 +21,7 @@ Important Lessons
 - Event listner requires e.preventDefault() to prevent page reload
 - event listener second parameter for callbacks requires a function reference, not just the function
 
-Attribution
+### Attribution
 
 <a href="https://www.flaticon.com/free-icons/sun" title="sun icons">Sun icons created by Good Ware - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/partly-cloudy" title="partly cloudy icons">Partly cloudy icons created by Sudowoodo - Flaticon</a>
