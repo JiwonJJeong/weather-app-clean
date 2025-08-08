@@ -1,13 +1,13 @@
 # weather-app
 The Odin Project project to make a weather forecast site. Fetch and display forecast from visual crossing weather API.
 
-## Skills Used
-- Manage versions with git and GitHub.
-- Fetch and process object data from weather API with async JS.
-- Use mix of Flexbox, Grid, and DOM manipulation to render page.
-- Organize assets and code with ESM and webpack.
+[Try it here!](https://jiwonjjeong.github.io/weather-app-clean/)
 
-### Important Lessons
+## Achieved Learning Skills
+- **Async code**: Fetched and processed data from weather API with async JS.
+- **Working with new APIs**: Researched HTML Date documentation to leverage built-in library.
+
+### Personal Takeaways
 
 - Any function that calls an async function needs to also be async if it needs to wait for the promise to resolve
 - Embedded strings with `${variable}` is useful in minimizing code
